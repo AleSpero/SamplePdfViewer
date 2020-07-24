@@ -47,12 +47,9 @@ class PdfBitmapPool(val pdfRenderer: PdfRenderer, val config: Bitmap.Config, val
         currentIndex = newLimitIndex
     }
 
-    fun getCurrentRange(currentIndex: Int, isMovingBackwards: Boolean = true): IntProgression {
-        //if the user is moving next it is more likely that he will go next again, so we render the pages
-        //based on this param in order to have the fastest result possible
+    fun getCurrentRange(currentIndex: Int): IntProgression {
         val sectionSize = (POOL_SIZE - 1) / 2
-        return if (isMovingBackwards) (currentIndex - sectionSize)..(currentIndex + sectionSize)
-        else (currentIndex + sectionSize) until currentIndex
+        return (currentIndex - sectionSize)..(currentIndex + sectionSize)
     }
 
     fun removeOutOfRangeElements(newRange: IntProgression) {
