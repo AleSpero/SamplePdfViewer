@@ -1,2 +1,2 @@
 # SamplePdfViewer
-Put link of the article here :D
+https://cloudacademy.com/blog/how-to-implement-pdf-viewer-in-your-app-using-pdfrenderer-and-viewpager2/
